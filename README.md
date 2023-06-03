@@ -44,7 +44,7 @@ To help you debug your design, type the following command to show the waveforms 
 
 This will open up gtkwave and show the traces for your modules inputs and outputs. Look through those traces to help you debug your design. 
     
-1. After you are module is working correctly, and you are not getting any error messages after running 'make verify', you can move on to the next section of implementing the design on the FPGA. 
+5. After you are module is working correctly, and you are not getting any error messages after running 'make verify', you can move on to the next section of implementing the design on the FPGA. 
 
 
 # Implementation on FPGA 
@@ -72,4 +72,7 @@ You will probably need to write extra modules that will decode the decimal digit
 
 
 The final output should be something like this when the stop watch is in the running state:
-![Alt could not show image](/imgs/fpga_implementation.jpg)
+
+
+
+<img src="./imgs/fpga_implementation.jpg" alt="fpga implementations" height=300>
