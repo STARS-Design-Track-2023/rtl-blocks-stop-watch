@@ -33,11 +33,11 @@ Each button press should change the state of the stop watch from Idle to Clear t
 
 
 # Instructions 
-
-1. Prepare an RTL diagram for your stop_watch module and have it approved by a TA. 
-2. Prepare a timing diagram using wavedrom that illustrates the operation of your stop watch module and have it approved by a TA. 
-3. implement your stop_watch module and other supporting modules you need in the top.sv file underneath the top module. 
-4. To test your module, type the following command in your terminal:
+1. Clone this github respository on your computer by typing 'git clone https://github.com/STARS-Design-Track-2023/rtl-blocks-stop_watch.git' in your terminal. 
+2. Prepare an RTL diagram for your stop_watch module and have it approved by a TA. 
+3. Prepare a timing diagram using wavedrom that illustrates the operation of your stop watch module and have it approved by a TA. 
+4. implement your stop_watch module and other supporting modules you need in the top.sv file underneath the top module. 
+5. To test your module, type the following command in your terminal:
       - make verify 
   
 This is going to pass your design through a testbench that will test whether your design meets the specifications. In the terminal, you should see the test cases as well as whether you passed them or not.
@@ -47,10 +47,10 @@ To help you debug your design, type the following command to show the waveforms 
 
 This will open up gtkwave and show the traces for your module's inputs and outputs. Look through those traces to help you debug your design.
 
-Here is what you window should look like: 
+Here is what your window should look like: 
 <img src="./imgs/wave_traces.png" width=600 alt="wave traces image">
     
-5. After your module is working correctly, and you are not getting any error messages after running 'make verify', you can move on to the next section of implementing the design on the FPGA. 
+6. After your module is working correctly, and you are not getting any error messages after running 'make verify', you can move on to the next section of implementing the design on the FPGA. 
 
 
 # Implementation on the FPGA 
