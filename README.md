@@ -48,7 +48,7 @@ To help you debug your design, type the following command to show the waveforms 
 This will open up gtkwave and show the traces for your module's inputs and outputs. Look through those traces to help you debug your design.
 
 Here is what you window should look like: 
-<img src="./imgs/wave_traces%20.png" width=600>
+<img src="./imgs/wave_traces.png" width=600 alt="wave traces image">
     
 5. After your module is working correctly, and you are not getting any error messages after running 'make verify', you can move on to the next section of implementing the design on the FPGA. 
 

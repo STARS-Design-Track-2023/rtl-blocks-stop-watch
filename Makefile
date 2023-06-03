@@ -49,17 +49,23 @@ $(BUILD)/$(PROJ).bin : $(BUILD)/$(PROJ).asc
 cram: $(BUILD)/$(PROJ).bin
 	iceprog -S $(BUILD)/$(PROJ).bin
 
-$(TRACE): $(TB) $(SRC)
+verify: $(TB) $(SRC)
 	@iverilog -g2012  -o sim.vvp $(TB) $(SRC)
-	vvp -N sim.vvp 1> >(sed -e 's/^.* 0 errors$$//' -e '/^Info:/d' -e '/^[ ]*$$/d' 1>&2)
+	@ vvp -N sim.vvp 1> >(sed -e 's/^.* 0 errors$$//' -e '/^Info:/d' -e '/^[ ]*$$/d' 1>&2)
 	@rm -f sim.vvp
 
-verify: $(TRACE)
+$(PROJ).vcd: $(TB) $(SRC)
+	@iverilog -g2012  -o sim.vvp $(TB) $(SRC)
+	@ vvp -N sim.vvp 1> >(sed -e 's/^.* 0 errors$$//' -e '/^Info:/d' -e '/^[ ]*$$/d' 1>&2)
+	@rm -f sim.vvp
+
+view_waveforms: $(PROJ).vcd
+	gtkwave -a waves_format.gtkw $(PROJ).vcd
 	
 # remove intermediate build files
 clean:
 	rm -rf build/ verilog.log $(PROJ).vcd			
 	
 	
-.PHONY: clean cram $(TRACE) verify 
+.PHONY: clean cram verify view_waveforms 
 
