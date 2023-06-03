@@ -1,20 +1,20 @@
 [*]
 [*] GTKWave Analyzer v3.3.107 (w)1999-2020 BSI
-[*] Sat Jun  3 17:23:06 2023
+[*] Sat Jun  3 20:50:40 2023
 [*]
-[dumpfile] "/Users/fahadaloufi/Desktop/STARS/Stop Watch v2/stop_watch.vcd"
-[dumpfile_mtime] "Sat Jun  3 17:14:13 2023"
-[dumpfile_size] 180398
-[savefile] "/Users/fahadaloufi/Desktop/STARS/Stop Watch v2/waves_format.gtkw"
+[dumpfile] "/Users/fahadaloufi/Desktop/STARS/Wk4/rtl-blocks-stop_watch_sol/stop_watch.vcd"
+[dumpfile_mtime] "Sat Jun  3 20:01:04 2023"
+[dumpfile_size] 182902
+[savefile] "/Users/fahadaloufi/Desktop/STARS/Wk4/rtl-blocks-stop_watch_sol/waves_format.gtkw"
 [timestart] 0
 [size] 1304 600
 [pos] 164 101
-*-16.000000 103200 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-16.000000 74700 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [sst_width] 193
 [signals_width] 230
 [sst_expanded] 1
 [sst_vpaned_height] 167
-@421
+@420
 [color] 1
 tb.tb_test_num
 @28
@@ -24,7 +24,7 @@ tb.tb_Rst_i
 tb.tb_button_i
 [color] 2
 tb.tb_mode[2:0]
-@22
+@25
 [color] 2
 tb.tb_time_o[4:0]
 [pattern_trace] 1
