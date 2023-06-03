@@ -72,4 +72,4 @@ You will probably need to write extra modules that will decode the decimal digit
 
 
 The final output should be something like this when the stop watch is in the running state:
-![Alt text](https://file%2B.vscode-resource.vscode-cdn.net/Users/fahadaloufi/Desktop/STARS/Wk4/rtl-blocks-stop_watch/imgs/fpga_implementation.jpg?version%3D1685823573596)
+![Alt could not show image](/imgs/fpga_implementation.jpg)
