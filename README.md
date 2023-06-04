@@ -15,6 +15,8 @@ Module Ouputs:
   
 The clock provided to your module will be a 100 Hz clock. 
 
+ The Rst_i signal is an active high asynchronous reset to all the FFs in your design. 
+
 The mode output needs to be 3'b100 when the state of the stop watch is Idle, 3'b010 when the state is Clear, and 3'b001 when the state is Running. 
 
 The time_o output needs to count from 0 (5'b00000) to 31 (5'b11111) and wrap up arround back to 0. 
