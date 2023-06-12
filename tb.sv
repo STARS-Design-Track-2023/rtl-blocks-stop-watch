@@ -7,8 +7,9 @@ enum logic[2:0] {IDLE = 3'b100, CLEAR = 3'b010, RUNNING = 3'b001} MODE_TYPES;
 
 localparam CLK_PERIOD = 10; // 100 Hz clk
 
+logic tb_checking_outputs = 1'b0; 
 integer tb_test_num;
-string tb_test_case; 
+logic[1024:0] tb_test_case; 
 
 
 // TB Signals
@@ -34,10 +35,14 @@ input logic[2:0] expected_mode;
 input string string_mode; 
 begin
     @(negedge tb_clk); 
+    tb_checking_outputs = 1'b1; 
     if(tb_mode == expected_mode)
         $display("Correct Mode: %s.", string_mode);
     else
         $error("Incorrect mode. Expected %s.", string_mode); 
+    
+    #(1);
+    tb_checking_outputs = 1'b0;  
 end
 endtask
 
@@ -48,14 +53,22 @@ task reset_dut;
     tb_Rst_i = 1'b0; 
 endtask
 
+
+
 task check_time_o;
 input logic[4:0] exp_time_o; 
 begin
     @(negedge tb_clk); 
+
+    tb_checking_outputs = 1'b1; 
+
     if(tb_time_o == exp_time_o)
         $display("Correct time_o: %0d.", exp_time_o);
     else
         $error("Incorrect mode. Expected %0d. Actual: %0d", exp_time_o, tb_time_o); 
+    
+    #(1);
+    tb_checking_outputs = 1'b0;  
 end
 endtask
 
@@ -88,6 +101,8 @@ initial begin
     // TEST CASE 1: Iterating through the different modes
     reset_dut; 
     tb_test_num += 1; 
+    tb_test_case = "TEST CASE1: Iterating through the different modes";
+
     $display("\n\nTEST CASE1: Iterating through the different modes\n\n");
     check_mode(IDLE, "IDLE"); 
 
@@ -105,6 +120,8 @@ initial begin
     
 
     // TEST CASE 2: Only Changes Modes during Rising edges
+    tb_test_case = "TEST CASE 2: Stop watch changes mode once for each button press";
+
     $display("\n\nTEST CASE 2: Stop watch changes mode once for each button press\n\n");
 
     tb_test_num += 1; 
@@ -119,6 +136,7 @@ initial begin
     tb_button_i = 1'b0; 
 
     // TEST CASE 3: simple usage 
+    tb_test_case = "TEST CASE 3: Simple usage"; 
     $display("\n\nTEST CASE 3: Simple usage\n\n");
     tb_test_num += 1; 
     reset_dut; 
