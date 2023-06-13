@@ -41,12 +41,7 @@ Each button press should change the state of the stop watch from Idle to Clear t
 
 ## __Instructions__
 --- 
-1. Clone this github respository on your computer by typing:
-     ```bash
-     git clone https://github.com/STARS-Design-Track-2023/rtl-blocks-stop_watch.git
-     ```
-     
-     in you terminal 
+1. Clone this github respository onto your computer
 2. Prepare an RTL diagram for your stop_watch module and have it approved by a TA. 
 3. Prepare a timing diagram using wavedrom that illustrates the operation of your stop watch module and have it approved by a TA. 
 4. Implement your stop_watch module and other supporting modules you need in their own seperate files. Each block in your top level design should be in its own "module-name".sv file where "module-name" is the name of the module contained in the file. Make sure to add those filenames to the "Makefile" file in your directory. On line 15 in the Makefile, you will see a "SRC" variable defined and it only containes "top.sv." Below is an example of what that SRC variable should be set to after you have wrote all supporting files:
