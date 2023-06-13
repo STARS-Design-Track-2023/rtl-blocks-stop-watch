@@ -24,6 +24,7 @@ The mode output needs to be 3'b100 when the state of the stop watch is Idle, 3'b
 
 The time_o output needs to count from 0 (5'b00000) to 31 (5'b11111) and wrap up arround back to 0. 
 
+Button inputs need to be passed through a synchronizer of depth 2, and an edge detector.
 
 ## __Behavior__
 ---
